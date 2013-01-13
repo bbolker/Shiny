@@ -92,7 +92,10 @@ shinyUI(pageWithSidebar(
                  a("Shiny.", href="http://www.rstudio.com/shiny/")),
                br(),
                strong('Author'), p('Samuel M. Jenness, Department of Epidemiology, 
-                                    University of Washington')
+                                    University of Washington'),
+               br(),
+               strong('Code'), p('Original source code for this application at', 
+                                 a('GitHub', href='https://github.com/smjenness/Shiny/tree/master/SIR'))
       )
     )
   )
