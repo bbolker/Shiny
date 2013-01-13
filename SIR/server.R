@@ -31,14 +31,14 @@ shinyServer(function(input, output) {
   })
   output$compplot <- reactivePlot(function() {
     par(mar=c(3.5,3.5,1.2,1), mgp=c(2.2,1,0))
-    comp.plot.mult(out(), compart=comp(), leg=leg(), lwd=3, axs='r', leg.cex=1, alpha=0.6)
+    comp.plot.mult(out(), compart=comp(), leg=leg(), lwd=3, axs='r', leg.cex=1, alpha=input$alpha)
   })
   output$dlPlot <- downloadHandler(
     filename = 'SIRplot.pdf',
     content = function(file) {
       pdf(file=file, h=6, w=10)
         par(mar=c(3.5,3.5,1.2,1), mgp=c(2.2,1,0))
-      comp.plot.mult(out(), compart=comp(), leg=leg(), lwd=3, axs='r', leg.cex=1, alpha=0.6)
+      comp.plot.mult(out(), compart=comp(), leg=leg(), lwd=3, axs='r', leg.cex=1, alpha=input$alpha)
       dev.off()
     }
   )
