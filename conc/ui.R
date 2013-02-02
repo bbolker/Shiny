@@ -1,7 +1,7 @@
 shinyUI(pageWithSidebar(
   
   # Header
-  headerPanel('Agent-based Stochastic Model of Concurrency on HIV'),  
+  headerPanel('The Impact of Concurrency on HIV: an Agent-based Stochastic Model'),  
   
   # Sidebar
   sidebarPanel(
@@ -14,7 +14,7 @@ shinyUI(pageWithSidebar(
     sliderInput(inputId='dur', label='Mean partnership duration',
                 min=10, max=20, value=10, step=5),
     br(),
-    selectInput(inputId='conc', label='Concurrency rules', 
+    selectInput(inputId='conc', label='Concurrency rule', 
                 choices=c('No concurrency', 'Female only concurrency',
                           'Male only concurrency', 'Both sexes concurrency')),
     
