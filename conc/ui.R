@@ -1,7 +1,7 @@
 shinyUI(pageWithSidebar(
   
   # Header
-  headerPanel('The Impact of Concurrency on HIV: an Agent-based Stochastic Model'),  
+  headerPanel('Concurrency and HIV: an Agent-based Stochastic Model'),  
   
   # Sidebar
   sidebarPanel(
@@ -44,6 +44,8 @@ shinyUI(pageWithSidebar(
         downloadButton('dlPlot', 'Download Plot')
       ),
       tabPanel('Tables', h4('Model Statistics'),
+               numericInput(inputId='time', label='Comparison time', 
+                            value=100, min=1, max=2400),
                br(),
                h5('Male Prevalence by Month'),
                tableOutput('statsm'),
@@ -58,10 +60,10 @@ shinyUI(pageWithSidebar(
                  a('Steven Goodreau.', href='http://faculty.washington.edu/goodreau/'), 
                  ' This web application is built by ', 
                  a('Samuel Jenness', href='http://students.washington.edu/sjenness'),
-                 'with the amazing ', a("Shiny.", href="http://www.rstudio.com/shiny/")),
+                 'with ', a("Shiny.", href="http://www.rstudio.com/shiny/")),
                br(),
                strong('Code'), p('Original source code for this application at', 
-                                 a('GitHub', href='https://github.com/smjenness/Shiny/tree/master/conc'))
+                                 a('GitHub.', href='https://github.com/smjenness/Shiny/tree/master/conc'))
       )
       
     )

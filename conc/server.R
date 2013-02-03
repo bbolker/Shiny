@@ -32,10 +32,10 @@ shinyServer(function(input, output) {
   
   # Stats tab
   output$statsm <- reactiveTable(function() {
-    sim.table(md=input$md, dur=input$dur, conc=conc(), male=1, digits=3)
+    sim.table(md=input$md, dur=input$dur, conc=conc(), male=1, time=input$time)
   })
   output$statsf <- reactiveTable(function() {
-    sim.table(md=input$md, dur=input$dur, conc=conc(), male=2, digits=3)
+    sim.table(md=input$md, dur=input$dur, conc=conc(), male=2, time=input$time)
   })
   
 })

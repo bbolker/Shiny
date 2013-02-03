@@ -69,7 +69,7 @@ sim.plot <- function(md, dur, conc, pos=1, medians=FALSE,
 }
 
 
-sim.table <- function(md, dur, conc, male=1, digits=4
+sim.table <- function(md, dur, conc, male=1, time
                       ) {
   
   data <- paste('Data/sim.d', dur, '.md', gsub('\\.','',md), '.Rdata', sep='')
@@ -99,7 +99,7 @@ sim.table <- function(md, dur, conc, male=1, digits=4
     c4f <- c4[,names(c4)=='feml.prev']
       c4f.med <- apply(c4f, 1, median)
 
-  times <- seq(1, 2400, 200)
+  times <- c(1, time, 2400)
   
   if (male==1) {
     c1m.out <- c1m.med[times]
@@ -116,9 +116,9 @@ sim.table <- function(md, dur, conc, male=1, digits=4
   }
   
   rownames(resmat) <- mains
-  colnames(resmat) <- times
+  colnames(resmat) <- c('Start', paste('t', time, sep=''), 'End')
 
-  resmat <- round(resmat, digits)  
+  resmat <- round(resmat, 4)  
   
   return(resmat)
   
